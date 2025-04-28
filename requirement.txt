@@ -1,6 +1,0 @@
-gemini ai
-langchain
-streamlit 
-python-dotenv
-PyPDF2
-
