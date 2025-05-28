@@ -9,6 +9,8 @@ from src.mcqgenerator.logger import logging
 from src.mcqgenerator.MCQgenerator import generate_evaluate_chain
 from langchain.callbacks import StdOutCallbackHandler
 
+load_dotenv()
+
 handler = StdOutCallbackHandler()
 
 with open(r'D:\Users\Lenovo\Downloads\mcqgen\Response.json','r') as file:
