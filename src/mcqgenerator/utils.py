@@ -7,7 +7,7 @@ import traceback
 def read_file(file):
     if file.name.endswith(".pdf"):
         try:
-            pdf_reader = PyPDF2.PdfFileReader(file)
+            pdf_reader = PyPDF2.PdfReader(file)
             text=""
             for page in pdf_reader.pages:
                 text+=page.extract_text()
@@ -26,13 +26,17 @@ def read_file(file):
     
 def get_table_data(quiz_str):
     try:
+        import re
+        json_match = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', quiz_str)
+        if json_match:
+            quiz_str = json_match.group(1)
 
         quiz_dict=json.loads(quiz_str)
         quiz_table_data=[]
 
-        for key,value in quiz_dict.items():
+        for key, value in quiz_dict.items():
             mcq=value["mcq"]
-            options=" || ".join(
+            options="\n".join(
                 [
                     f"{option}->{option_value}" for option, option_value in value["options"].items()
                 ]
