@@ -3,7 +3,6 @@ import traceback
 import pandas as pd
 from src.mcqgenerator.utils import read_file, get_table_data
 import streamlit as st
-from src.mcqgenerator.logger import logging
 from src.mcqgenerator.MCQgenerator import generate_evaluate_chain
 from langchain.callbacks import StdOutCallbackHandler
 
