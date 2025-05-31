@@ -35,7 +35,7 @@ def get_table_data(quiz_str):
 
         for key, value in quiz_dict.items():
             mcq=value["mcq"]
-            correct=value["correct         "]
+            correct=value["correct"]
             option = value["options"]
 
             quiz_table_data.append({
