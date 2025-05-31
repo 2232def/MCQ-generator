@@ -9,7 +9,7 @@ from langchain.callbacks import StdOutCallbackHandler
 
 handler = StdOutCallbackHandler()
 
-with open(r'D:\Users\Lenovo\Downloads\mcqgen\Response.json','r') as file:
+with open(r'./Response.json','r') as file:
     RESPONSE_JSON = json.load(file)
 
 st.write("Streamlit version:", st.__version__)
