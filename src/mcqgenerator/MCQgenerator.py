@@ -2,9 +2,8 @@ import os
 from dotenv import load_dotenv
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from langchain.chains import SequentialChain
+from langchain_core.prompts import PromptTemplate
+from langchain_classic.chains import LLMChain, SequentialChain
 
 load_dotenv()
 
@@ -25,7 +24,6 @@ Make sure to format your response like  RESPONSE_JSON below  and use it as a gui
 Ensure to make {number} MCQs
 ### RESPONSE_JSON
 {response_json}
-
 """
 
 quiz_generation_prompt = PromptTemplate(
